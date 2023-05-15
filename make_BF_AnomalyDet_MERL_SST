@@ -1,0 +1,12 @@
+# Copyright (C) 2014, 2023 Mitsubishi Electric Research Laboratories (MERL)
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+BF_AnomalyDet_MERL_SST : BF_AnomalyDet_MERL_SST.o compute_SST_feature.o
+	cc -L./ -o BF_AnomalyDet_MERL_SST BF_AnomalyDet_MERL_SST.o compute_SST_feature.o -lm
+
+BF_AnomalyDet_MERL_SST.o : BF_AnomalyDet_MERL_SST.c
+	cc -c BF_AnomalyDet_MERL_SST.c
+
+compute_SST_feature.o : compute_SST_feature.c
+	cc -c compute_SST_feature.c
